@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
     @ratings_to_show = @all_ratings
     if params[:ratings].present?
       @ratings_to_show = params[:ratings].keys
+    end
 
     @movies = Movie.with_ratings(@ratings_to_show)
   end
